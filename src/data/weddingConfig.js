@@ -20,8 +20,8 @@ export const weddingConfig = {
   venueCoordinates: { lat: 22.2937, lng: 73.1969 },
   
   musicTrack: {
-    title: "Bollywood Wedding Shehnai Symphony",
-    artist: "Hindi Marriage Melody",
+    title: "Din Shagna Da (Bollywood Wedding Theme)",
+    artist: "Jasleen Royal / Indian Wedding Melody",
     // Reliable Indian traditional flute & shehnai audio streams
     audioUrls: [
       "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=indian-flute-traditional-112349.mp3",
