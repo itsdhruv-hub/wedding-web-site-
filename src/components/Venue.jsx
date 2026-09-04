@@ -6,11 +6,11 @@ import { RevealText, GoldDivider } from './ui/Reveal';
 
 export default function Venue({ t }) {
   return (
-    <section id="venue" className="py-24 md:py-32 bg-cream text-softBrown overflow-hidden">
+    <section id="venue" className="py-10 md:py-16 bg-cream text-softBrown overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-8">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ export default function Venue({ t }) {
         </div>
 
         {/* Venue Showcase Card & Map Preview Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center">
           
           {/* Left Venue Details & Travel Info */}
           <motion.div

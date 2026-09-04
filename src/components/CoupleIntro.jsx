@@ -14,11 +14,11 @@ const InstagramIcon = ({ className }) => (
 
 export default function CoupleIntro({ t }) {
   return (
-    <section className="py-20 md:py-28 bg-cream text-softBrown overflow-hidden">
+    <section className="py-10 md:py-14 bg-cream text-softBrown overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-8">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ export default function CoupleIntro({ t }) {
         </div>
 
         {/* Bride & Groom Editorial Showcase Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
           
           {/* BRIDE CARD */}
           <motion.div

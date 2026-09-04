@@ -4,7 +4,7 @@ import { Heart } from 'lucide-react';
 
 export default function LoveNote({ quote, bgImage }) {
   return (
-    <section className="relative py-24 md:py-36 flex items-center justify-center text-center overflow-hidden bg-royal-maroon text-champagne">
+    <section className="relative py-10 md:py-16 flex items-center justify-center text-center overflow-hidden bg-royal-maroon text-champagne">
       {/* Background Image with Fixed Parallax Effect */}
       {bgImage && (
         <div

@@ -23,11 +23,11 @@ export default function Gallery({ t }) {
   };
 
   return (
-    <section id="gallery" className="py-24 md:py-32 bg-cream-light text-softBrown overflow-hidden">
+    <section id="gallery" className="py-10 md:py-16 bg-cream-light text-softBrown overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-8">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ export default function Gallery({ t }) {
         </div>
 
         {/* Editorial Masonry Grid with Staggered Clip Reveals */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[240px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[220px] sm:auto-rows-[240px]">
           {weddingConfig.gallery.map((img, idx) => (
             <RevealImage
               key={img.url + idx}

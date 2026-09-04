@@ -8,11 +8,11 @@ export default function Family({ t }) {
   const { family } = weddingConfig;
 
   return (
-    <section className="py-20 md:py-28 bg-cream-light text-softBrown overflow-hidden">
+    <section className="py-10 md:py-14 bg-cream-light text-softBrown overflow-hidden">
       <div className="max-w-5xl mx-auto px-6 text-center">
         
         {/* Section Header */}
-        <div className="mb-12">
+        <div className="mb-6">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ export default function Family({ t }) {
         </div>
 
         {/* Patel & Shah Family Showcase Grid */}
-        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-6">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-4">
           
           {/* BRIDE FAMILY (Left Reveal) */}
           <motion.div

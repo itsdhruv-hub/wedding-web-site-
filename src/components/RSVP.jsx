@@ -45,11 +45,11 @@ export default function RSVP({ guestName, t, onRsvpSuccess }) {
   };
 
   return (
-    <section id="rsvp" className="py-24 md:py-32 bg-cream text-softBrown overflow-hidden">
+    <section id="rsvp" className="py-10 md:py-16 bg-cream text-softBrown overflow-hidden">
       <div className="max-w-4xl mx-auto px-6">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-6">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}

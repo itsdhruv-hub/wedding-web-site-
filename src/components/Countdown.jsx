@@ -33,7 +33,7 @@ export default function Countdown({ t }) {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-royal-maroon text-champagne relative overflow-hidden">
+    <section className="py-10 md:py-14 bg-royal-maroon text-champagne relative overflow-hidden">
       {/* Background Ornament Texture */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.12)_0%,transparent_70%)] pointer-events-none" />
 

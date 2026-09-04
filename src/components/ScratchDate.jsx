@@ -137,11 +137,11 @@ END:VCALENDAR`;
   };
 
   return (
-    <section id="scratch-date" className="py-20 bg-cream text-softBrown overflow-hidden">
+    <section id="scratch-date" className="py-10 md:py-14 bg-cream text-softBrown overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 text-center">
         
         {/* Section Header */}
-        <div className="mb-8">
+        <div className="mb-5">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}

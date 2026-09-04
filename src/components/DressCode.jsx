@@ -5,7 +5,7 @@ import { weddingConfig } from '../data/weddingConfig';
 
 export default function DressCode({ t }) {
   return (
-    <section className="py-20 md:py-28 bg-cream-light text-softBrown overflow-hidden">
+    <section className="py-10 md:py-14 bg-cream-light text-softBrown overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 text-center">
         
         {/* Section Header */}
@@ -24,7 +24,7 @@ export default function DressCode({ t }) {
             {t.dressCode.heading}
           </h2>
 
-          <p className="font-cormorant text-lg md:text-xl text-softBrown/70 italic max-w-md mx-auto mb-12">
+          <p className="font-cormorant text-lg md:text-xl text-softBrown/70 italic max-w-md mx-auto mb-6">
             "{t.dressCode.subheading}"
           </p>
         </motion.div>

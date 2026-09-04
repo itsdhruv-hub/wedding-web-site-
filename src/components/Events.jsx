@@ -34,11 +34,11 @@ END:VCALENDAR`;
   };
 
   return (
-    <section id="events" className="py-24 md:py-32 bg-cream text-softBrown overflow-hidden">
+    <section id="events" className="py-10 md:py-16 bg-cream text-softBrown overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-6">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ END:VCALENDAR`;
         </div>
 
         {/* Interactive Event Function Tabs */}
-        <div className="flex items-center justify-center gap-2 md:gap-4 overflow-x-auto pb-4 mb-10 no-scrollbar">
+        <div className="flex items-center justify-center gap-2 md:gap-4 overflow-x-auto pb-4 mb-6 no-scrollbar">
           {weddingConfig.events.map((evt) => {
             const isActive = activeTab === evt.id;
             return (

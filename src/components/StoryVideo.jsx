@@ -8,14 +8,14 @@ export default function StoryVideo({ t }) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section className="py-20 md:py-28 bg-royal-maroon text-champagne relative overflow-hidden">
+    <section className="py-10 md:py-14 bg-royal-maroon text-champagne relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.12)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
         
         {/* Section Header */}
-        <div className="mb-10">
+        <div className="mb-6">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}

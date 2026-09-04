@@ -26,11 +26,11 @@ export default function WeddingTimeline({ t }) {
   });
 
   return (
-    <section className="py-20 md:py-28 bg-royal-maroon text-champagne relative overflow-hidden">
+    <section className="py-10 md:py-14 bg-royal-maroon text-champagne relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
         
         {/* Section Header */}
-        <div className="mb-12">
+        <div className="mb-6">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}

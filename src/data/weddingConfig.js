@@ -51,7 +51,7 @@ export const weddingConfig = {
     bride: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
     groom: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
     coupleStoryPoster: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=80",
-    venuePreview: "https://images.unsplash.com/photo-1545232979-fbf4249a2153?auto=format&fit=crop&w=1200&q=80",
+    venuePreview: phereImg,
     finalSectionBg: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1920&q=85",
   },
 

@@ -11,7 +11,7 @@ export default function FinalSection({ t }) {
   };
 
   return (
-    <section className="relative min-h-[85vh] flex flex-col justify-between py-20 px-6 bg-royal-maroon text-champagne overflow-hidden text-center">
+    <section className="relative flex flex-col justify-between py-10 md:py-16 px-6 bg-royal-maroon text-champagne overflow-hidden text-center">
       {/* Background Photo with Settling Parallax Scale 1.07 -> 1 */}
       <motion.div
         initial={{ scale: 1.07 }}
@@ -24,7 +24,7 @@ export default function FinalSection({ t }) {
       <div className="absolute inset-0 bg-gradient-to-b from-royal-maroonDark/90 via-royal-maroon/70 to-royal-maroonDark z-1 pointer-events-none" />
 
       {/* Main Content Box */}
-      <div className="relative z-10 max-w-4xl mx-auto my-auto py-12 flex flex-col items-center">
+      <div className="relative z-10 max-w-4xl mx-auto my-auto py-6 flex flex-col items-center">
         
         {/* Heart Badge */}
         <motion.div

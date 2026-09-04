@@ -7,7 +7,7 @@ export default function GuestWelcome({ guestName, t }) {
   const nameToDisplay = guestName ? guestName : null;
 
   return (
-    <section className="relative py-12 md:py-16 bg-cream text-softBrown overflow-hidden border-y border-gold/20">
+    <section className="relative py-8 md:py-12 bg-cream text-softBrown overflow-hidden border-y border-gold/20">
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         
         {/* Decorative Ornament */}

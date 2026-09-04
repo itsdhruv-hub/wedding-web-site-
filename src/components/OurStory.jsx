@@ -20,11 +20,11 @@ export default function OurStory({ t }) {
   });
 
   return (
-    <section id="story" className="py-24 md:py-32 bg-cream-light text-softBrown overflow-hidden relative">
+    <section id="story" className="py-10 md:py-16 bg-cream-light text-softBrown overflow-hidden relative">
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ export default function OurStory({ t }) {
           />
 
           {/* Story Milestones */}
-          <div className="space-y-16 md:space-y-24 relative z-20">
+          <div className="space-y-8 md:space-y-12 relative z-20">
             {weddingConfig.story.map((item, idx) => {
               const isEven = idx % 2 === 0;
               return (

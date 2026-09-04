@@ -30,7 +30,7 @@ export default function GuestPass({ guestName, t }) {
   };
 
   return (
-    <section id="guest-pass" className="py-20 md:py-28 bg-cream-light text-softBrown overflow-hidden">
+    <section id="guest-pass" className="py-10 md:py-14 bg-cream-light text-softBrown overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 text-center">
         
         {/* Section Header */}
@@ -49,7 +49,7 @@ export default function GuestPass({ guestName, t }) {
             {t.guestPass.heading}
           </h2>
 
-          <p className="font-cormorant text-lg md:text-xl text-softBrown/70 italic max-w-md mx-auto mb-12">
+          <p className="font-cormorant text-lg md:text-xl text-softBrown/70 italic max-w-md mx-auto mb-6">
             "{t.guestPass.subheading}"
           </p>
         </motion.div>

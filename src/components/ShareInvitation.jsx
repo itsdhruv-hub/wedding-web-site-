@@ -28,7 +28,7 @@ export default function ShareInvitation({ t }) {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-royal-maroon text-champagne relative overflow-hidden">
+    <section className="py-10 md:py-16 bg-royal-maroon text-champagne relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         
         {/* Instagram Hashtag Section */}
@@ -37,7 +37,7 @@ export default function ShareInvitation({ t }) {
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mb-12"
+          className="mb-6"
         >
           <div className="w-12 h-12 rounded-full bg-gold/10 border border-gold/40 flex items-center justify-center text-gold mx-auto mb-4">
             <InstagramIcon className="w-6 h-6" />

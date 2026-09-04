@@ -36,6 +36,7 @@ import Family from './components/Family';
 import ShareInvitation from './components/ShareInvitation';
 import LoveNote from './components/LoveNote';
 import FinalSection from './components/FinalSection';
+import SectionDivider from './components/ui/SectionDivider';
 
 export default function App() {
   const [currentLang, setCurrentLang] = useState('en');
@@ -129,8 +130,12 @@ export default function App() {
           {/* Interactive Scratch-to-Reveal Wedding Date */}
           <ScratchDate t={t} />
 
+          <SectionDivider />
+
           {/* Animated 4-Unit Countdown Timer */}
           <Countdown t={t} />
+
+          <SectionDivider />
 
           {/* Bride & Groom Editorial Profiles */}
           <CoupleIntro t={t} />
@@ -147,8 +152,12 @@ export default function App() {
           {/* Couple Story Video */}
           <StoryVideo t={t} />
 
+          <SectionDivider />
+
           {/* Redesigned Luxury 3D Wedding Celebrations Showcase */}
           <Events t={t} />
+
+          <SectionDivider />
 
           {/* Day-of Ceremony Itinerary */}
           <WeddingTimeline t={t} />
@@ -162,11 +171,17 @@ export default function App() {
           {/* Destination Venue Map & Directions */}
           <Venue t={t} />
 
+          <SectionDivider />
+
           {/* Interactive Polaroid Memory Cards */}
           <MemoryCards t={t} />
 
+          <SectionDivider />
+
           {/* Editorial Photo Gallery with Lightbox */}
           <Gallery t={t} />
+
+          <SectionDivider />
 
           {/* Patel & Shah Family Showcase */}
           <Family t={t} />
