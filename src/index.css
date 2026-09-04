@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-light: #F5E6BA;
+  --color-gold: #D4AF37;
+  --color-gold-dark: #9A7B1C;
+  --color-gold-rose: #B8860B;
+
+  --color-royal-maroon: #4A0E17;
+  --color-royal-maroonDark: #2D070C;
+  --color-royal-emerald: #0F4C3A;
+  --color-royal-navy: #14213D;
+
+  --color-cream-light: #FFFDF9;
+  --color-cream: #FAF5EE;
+  --color-cream-dark: #F3EAD8;
+
+  --color-champagne: #F7E7CE;
+  --color-dustyRose: #E0B0B0;
+  --color-softBrown: #4A3E3D;
+
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-playfair: "Playfair Display", serif;
+  --font-script: "Great Vibes", cursive;
+  --font-alex: "Alex Brush", cursive;
+  --font-sans: Inter, Manrope, sans-serif;
+  --font-devanagari: "Noto Serif Devanagari", serif;
+  --font-gujarati: "Noto Serif Gujarati", serif;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #FAF5EE;
+    font-family: 'Inter', sans-serif;
+    color: #4A3E3D;
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #F5E6BA 0%, #D4AF37 50%, #9A7B1C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-maroon-gradient {
+    background: linear-gradient(135deg, #6B1724 0%, #4A0E17 50%, #2D070C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, #F5E6BA 0%, #D4AF37 50%, #B8860B 100%);
+  }
+
+  .bg-royal-maroon-gradient {
+    background: linear-gradient(135deg, #6B1724 0%, #4A0E17 100%);
+  }
+
+  .bg-glass {
+    background: rgba(255, 253, 249, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .bg-glass-dark {
+    background: rgba(26, 10, 15, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .border-gold-subtle {
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+
+  .font-gujarati {
+    font-family: 'Noto Serif Gujarati', serif;
+  }
+
+  .font-devanagari {
+    font-family: 'Noto Serif Devanagari', serif;
+  }
+
+  .perspective-1200 {
+    perspective: 1200px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF5EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9A7B1C;
+}
+
+/* Subtle Shimmer Effect */
+.shimmer-effect {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(212,175,55,0.2) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
