@@ -1,3 +1,9 @@
+import mehendiImg from '../assets/mehendi.jpg';
+import haldiImg from '../assets/haldi.jpg';
+import sangeetImg from '../assets/sangeet.jpg';
+import phereImg from '../assets/phere.jpg';
+import receptionImg from '../assets/reception.jpg';
+
 export const weddingConfig = {
   brideName: "Riya",
   brideFullName: "Riya Patel",
@@ -107,7 +113,7 @@ export const weddingConfig = {
       textColor: "#E2F1EC",
       badge: "Floral Elegance",
       icon: "🌿",
-      bgImage: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+      bgImage: mehendiImg,
       description: "Join us for an afternoon of intricate mehendi designs, traditional folk songs, refreshing mocktails, and joyful dancing under floral canopies.",
       colors: [
         { name: "Emerald Green", hex: "#0F4C3A" },
@@ -132,7 +138,7 @@ export const weddingConfig = {
       textColor: "#3A2800",
       badge: "Sunshine Vibe",
       icon: "🌼",
-      bgImage: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80",
+      bgImage: haldiImg,
       description: "Smear love, turmeric, and good fortune on the bride and groom amidst upbeat beats, marigold petal showers, and playful laughter.",
       colors: [
         { name: "Marigold Yellow", hex: "#FFC107" },
@@ -157,7 +163,7 @@ export const weddingConfig = {
       textColor: "#F7E7CE",
       badge: "Starry Night",
       icon: "💃",
-      bgImage: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80",
+      bgImage: sangeetImg,
       description: "An extraordinary evening of choreographed family dance performances, live DJ beats, gourmet fusion dining, and endless celebration.",
       colors: [
         { name: "Midnight Blue", hex: "#14213D" },
@@ -182,7 +188,7 @@ export const weddingConfig = {
       textColor: "#F5E6BA",
       badge: "Sacred Union",
       icon: "💍",
-      bgImage: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
+      bgImage: phereImg,
       description: "Witness the sacred union of Riya and Aarav as they walk seven steps together around the holy fire, creating memories for a lifetime.",
       colors: [
         { name: "Royal Crimson", hex: "#6B1724" },
@@ -208,7 +214,7 @@ export const weddingConfig = {
       textColor: "#FFFFFF",
       badge: "Grand Finale",
       icon: "🥂",
-      bgImage: "https://images.unsplash.com/photo-1545232979-fbf4249a2153?auto=format&fit=crop&w=800&q=80",
+      bgImage: receptionImg,
       description: "Conclude our celebration with an evening of royal hospitality, live orchestral melodies, champagne toasts, and heartfelt blessings.",
       colors: [
         { name: "Velvet Black", hex: "#1A1A1A" },
