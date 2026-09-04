@@ -3,12 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { Sparkles, CalendarCheck, Heart } from 'lucide-react';
 import { weddingConfig } from '../data/weddingConfig';
+import { RevealText, GoldDivider } from './ui/Reveal';
 
 export default function ScratchDate({ t }) {
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
   const [isScratched, setIsScratched] = useState(false);
   const [scratchPercent, setScratchPercent] = useState(0);
+  const [hasStartedScratching, setHasStartedScratching] = useState(false);
   const isDrawing = useRef(false);
 
   useEffect(() => {
@@ -39,7 +41,7 @@ export default function ScratchDate({ t }) {
 
     // Decorative Text pattern on top of scratch surface
     ctx.fillStyle = 'rgba(74, 14, 23, 0.5)';
-    ctx.font = 'bold 16px sans-serif';
+    ctx.font = 'bold 15px sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText('✨ SCRATCH WITH FINGER OR CURSOR ✨', canvas.width / 2, canvas.height / 2);
   };
@@ -58,6 +60,7 @@ export default function ScratchDate({ t }) {
 
   const scratch = (e) => {
     if (!isDrawing.current || isScratched) return;
+    if (!hasStartedScratching) setHasStartedScratching(true);
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -89,57 +92,17 @@ export default function ScratchDate({ t }) {
     if (percent > 45 && !isScratched) {
       setIsScratched(true);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      triggerGrandCelebrationPoppers();
+      triggerSparkleBurst();
     }
   };
 
-  // Grand Celebration Poppers & Falling Hearts cascade animation
-  const triggerGrandCelebrationPoppers = () => {
-    // Burst 1: Golden Confetti Burst
+  const triggerSparkleBurst = () => {
     confetti({
-      particleCount: 100,
-      spread: 100,
+      particleCount: 110,
+      spread: 90,
       origin: { y: 0.5 },
       colors: ['#D4AF37', '#F5E6BA', '#6B1724', '#FFFFFF'],
     });
-
-    // Burst 2: Side Poppers
-    setTimeout(() => {
-      confetti({
-        particleCount: 60,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 },
-        colors: ['#D4AF37', '#E5A00D', '#6B1724'],
-      });
-      confetti({
-        particleCount: 60,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 },
-        colors: ['#D4AF37', '#E5A00D', '#6B1724'],
-      });
-    }, 400);
-
-    // Burst 3: Continuous Falling Hearts Cascade
-    const duration = 4 * 1000;
-    const end = Date.now() + duration;
-
-    (function frame() {
-      confetti({
-        particleCount: 3,
-        angle: 90,
-        spread: 120,
-        origin: { y: 0 },
-        colors: ['#FF1493', '#D4AF37', '#6B1724', '#FAF5EE'],
-        shapes: ['circle'],
-        scalar: 1.2
-      });
-
-      if (Date.now() < end) {
-        requestAnimationFrame(frame);
-      }
-    })();
   };
 
   const handleStart = (e) => {
@@ -178,32 +141,36 @@ END:VCALENDAR`;
       <div className="max-w-4xl mx-auto px-6 text-center">
         
         {/* Section Header */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/40 text-royal-maroon font-cormorant text-sm tracking-widest uppercase mb-3">
+        <div className="mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/40 text-royal-maroon font-cormorant text-sm tracking-widest uppercase mb-3"
+          >
             <Sparkles className="w-3.5 h-3.5 text-gold" />
             <span>Scratch To Unlock</span>
-          </div>
+          </motion.div>
 
-          <h2 className="font-playfair text-3xl md:text-5xl text-maroon-gradient font-bold mb-2">
+          <RevealText as="h2" className="font-playfair text-3xl md:text-5xl text-maroon-gradient font-bold mb-2">
             {t.scratchDate.heading}
-          </h2>
-          <p className="font-sans text-sm md:text-base text-softBrown/70 max-w-md mx-auto mb-8">
+          </RevealText>
+
+          <GoldDivider className="w-20 mx-auto my-3" />
+
+          <p className="font-sans text-sm md:text-base text-softBrown/70 max-w-md mx-auto">
             {t.scratchDate.subheading}
           </p>
-        </motion.div>
+        </div>
 
-        {/* Scratch Card Container */}
+        {/* Scratch Card Container (3D Tilt Entrance) */}
         <motion.div
           ref={containerRef}
-          initial={{ scale: 0.9, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          initial={{ scale: 0.92, rotateX: 7, opacity: 0 }}
+          whileInView={{ scale: 1, rotateX: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           className="relative max-w-md mx-auto aspect-[16/9] rounded-3xl overflow-hidden shadow-royal border-2 border-gold/60 bg-royal-maroon text-champagne p-6 flex flex-col items-center justify-center select-none [perspective:1000px]"
         >
           {/* Revealed Underlying 3D Wedding Date Card */}
@@ -247,6 +214,18 @@ END:VCALENDAR`;
               className="absolute inset-0 w-full h-full cursor-pointer touch-none z-10"
             />
           )}
+
+          {/* Swipe Hint Overlay (Pulses twice then stops) */}
+          {!isScratched && !hasStartedScratching && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1, 0.5, 1, 0] }}
+              transition={{ duration: 3, times: [0, 0.25, 0.5, 0.75, 1] }}
+              className="absolute pointer-events-none z-20 flex flex-col items-center text-champagne text-xs font-sans tracking-widest uppercase bg-black/40 px-3 py-1.5 rounded-full border border-gold/40 backdrop-blur-sm"
+            >
+              <span>👆 Swipe across to reveal</span>
+            </motion.div>
+          )}
         </motion.div>
 
         {/* Scratch Progress & Actions */}
@@ -257,17 +236,19 @@ END:VCALENDAR`;
             </p>
           ) : (
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               className="flex flex-wrap items-center justify-center gap-4 mt-2"
             >
-              <button
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={downloadICS}
-                className="px-8 py-3.5 rounded-full bg-gold-gradient text-royal-maroon font-cormorant text-base md:text-lg font-bold tracking-wider shadow-glow hover:scale-105 transition-transform flex items-center gap-2 cursor-pointer"
+                className="px-8 py-3.5 rounded-full bg-gold-gradient text-royal-maroon font-cormorant text-base md:text-lg font-bold tracking-wider shadow-glow flex items-center gap-2 cursor-pointer"
               >
                 <CalendarCheck className="w-5 h-5 text-royal-maroon" />
                 <span>{t.scratchDate.addToCalendar}</span>
-              </button>
+              </motion.button>
             </motion.div>
           )}
         </div>

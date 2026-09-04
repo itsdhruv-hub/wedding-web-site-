@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Heart } from 'lucide-react';
 import { weddingConfig } from '../data/weddingConfig';
+import { RevealText, RevealImage, GoldDivider } from './ui/Reveal';
 
 const InstagramIcon = ({ className }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -19,29 +20,26 @@ export default function CoupleIntro({ t }) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="font-cormorant text-base md:text-lg tracking-[0.25em] uppercase text-gold-dark font-semibold"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.6 }}
+            className="font-cormorant text-base md:text-lg tracking-[0.25em] uppercase text-gold-dark font-semibold block mb-2"
           >
             {t.couple.heading}
           </motion.span>
           
-          <motion.h2
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="font-playfair text-4xl md:text-6xl text-maroon-gradient font-bold my-2"
-          >
+          <RevealText as="h2" className="font-playfair text-4xl md:text-6xl text-maroon-gradient font-bold my-2">
             {weddingConfig.brideName} & {weddingConfig.groomName}
-          </motion.h2>
+          </RevealText>
+
+          <GoldDivider className="w-24 mx-auto my-3" />
 
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ delay: 0.3 }}
             className="font-cormorant text-lg md:text-xl text-softBrown/70 italic"
           >
             "{t.couple.subheading}"
@@ -53,23 +51,23 @@ export default function CoupleIntro({ t }) {
           
           {/* BRIDE CARD */}
           <motion.div
-            initial={{ x: -40, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative group bg-cream-light rounded-3xl p-6 md:p-8 shadow-royal border border-gold/30 flex flex-col items-center text-center hover:border-gold/60 transition-all"
+            initial={{ y: 24, rotate: -1.5, opacity: 0 }}
+            whileInView={{ y: 0, rotate: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="relative group bg-cream-light rounded-3xl p-6 md:p-8 shadow-royal border border-gold/30 flex flex-col items-center text-center hover:border-gold/60 transition-colors"
           >
-            <div className="relative w-56 h-72 md:w-64 md:h-80 rounded-2xl overflow-hidden shadow-md mb-6 border-2 border-gold/40">
+            <RevealImage className="relative w-56 h-72 md:w-64 md:h-80 rounded-2xl shadow-md mb-6 border-2 border-gold/40">
               <img
                 src={weddingConfig.images.bride}
                 alt={weddingConfig.brideFullName}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-royal-maroon/50 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-royal-maroon/50 via-transparent to-transparent pointer-events-none" />
               <span className="absolute bottom-3 left-4 font-cormorant text-sm tracking-widest text-champagne uppercase font-medium">
                 {t.couple.theBride}
               </span>
-            </div>
+            </RevealImage>
 
             <h3 className="font-playfair text-3xl md:text-4xl text-maroon-gradient font-bold">
               {weddingConfig.brideFullName}
@@ -92,23 +90,23 @@ export default function CoupleIntro({ t }) {
 
           {/* GROOM CARD */}
           <motion.div
-            initial={{ x: 40, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative group bg-cream-light rounded-3xl p-6 md:p-8 shadow-royal border border-gold/30 flex flex-col items-center text-center hover:border-gold/60 transition-all"
+            initial={{ y: 32, rotate: 1.5, opacity: 0 }}
+            whileInView={{ y: 0, rotate: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="relative group bg-cream-light rounded-3xl p-6 md:p-8 shadow-royal border border-gold/30 flex flex-col items-center text-center hover:border-gold/60 transition-colors"
           >
-            <div className="relative w-56 h-72 md:w-64 md:h-80 rounded-2xl overflow-hidden shadow-md mb-6 border-2 border-gold/40">
+            <RevealImage className="relative w-56 h-72 md:w-64 md:h-80 rounded-2xl shadow-md mb-6 border-2 border-gold/40">
               <img
                 src={weddingConfig.images.groom}
                 alt={weddingConfig.groomFullName}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-royal-maroon/50 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-royal-maroon/50 via-transparent to-transparent pointer-events-none" />
               <span className="absolute bottom-3 left-4 font-cormorant text-sm tracking-widest text-champagne uppercase font-medium">
                 {t.couple.theGroom}
               </span>
-            </div>
+            </RevealImage>
 
             <h3 className="font-playfair text-3xl md:text-4xl text-maroon-gradient font-bold">
               {weddingConfig.groomFullName}

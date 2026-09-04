@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Calendar, Clock, MapPin, ArrowRight, Navigation, CalendarPlus } from 'lucide-react';
 import { weddingConfig } from '../data/weddingConfig';
 import EventModal from './EventModal';
+import { RevealText, GoldDivider } from './ui/Reveal';
 
 export default function Events({ t }) {
   const [activeTab, setActiveTab] = useState(weddingConfig.events[0].id);
@@ -41,27 +42,24 @@ END:VCALENDAR`;
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/40 text-royal-maroon font-cormorant text-sm tracking-widest uppercase mb-3"
           >
             <Sparkles className="w-3.5 h-3.5 text-gold" />
             <span>Grand Celebrations</span>
           </motion.div>
 
-          <motion.h2
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="font-playfair text-4xl md:text-6xl text-maroon-gradient font-bold my-2"
-          >
+          <RevealText as="h2" className="font-playfair text-4xl md:text-6xl text-maroon-gradient font-bold my-2">
             {t.events.heading}
-          </motion.h2>
+          </RevealText>
+
+          <GoldDivider className="w-24 mx-auto my-3" />
 
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.25 }}
             transition={{ delay: 0.2 }}
             className="font-cormorant text-lg md:text-xl text-softBrown/70 italic"
           >
@@ -90,14 +88,14 @@ END:VCALENDAR`;
           })}
         </div>
 
-        {/* Featured Luxury 3D Showcase Card */}
+        {/* Featured Luxury Showcase Card with Smooth AnimatePresence Slide */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeEvent.id}
-            initial={{ opacity: 0, y: 20, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -20, scale: 0.98 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, x: 20, scale: 0.98 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: -20, scale: 0.98 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="bg-cream-light rounded-3xl shadow-2xl border-2 border-gold/50 overflow-hidden grid grid-cols-1 lg:grid-cols-12"
           >
             {/* Left Photo & Theme Backdrop */}
@@ -107,7 +105,7 @@ END:VCALENDAR`;
                 alt={activeEvent.name}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-royal-maroonDark/90 via-royal-maroon/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-royal-maroonDark/90 via-royal-maroon/40 to-transparent pointer-events-none" />
 
               <div className="absolute top-6 left-6">
                 <span
@@ -178,23 +176,27 @@ END:VCALENDAR`;
               {/* Bottom Actions */}
               <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-gold/20 mt-4">
                 <div className="flex items-center gap-3">
-                  <a
+                  <motion.a
+                    whileHover={{ scale: 1.04 }}
+                    whileTap={{ scale: 0.96 }}
                     href={weddingConfig.venueMapUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="px-6 py-3 rounded-full bg-royal-maroon text-gold-light font-cormorant text-sm md:text-base font-bold tracking-wider hover:bg-gold-gradient hover:text-royal-maroon transition-all flex items-center gap-2 shadow-md cursor-pointer"
+                    className="px-6 py-3 rounded-full bg-royal-maroon text-gold-light font-cormorant text-sm md:text-base font-bold tracking-wider hover:bg-gold-gradient hover:text-royal-maroon transition-colors flex items-center gap-2 shadow-md cursor-pointer"
                   >
                     <Navigation className="w-4 h-4" />
                     <span>{t.events.getDirections}</span>
-                  </a>
+                  </motion.a>
 
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.04 }}
+                    whileTap={{ scale: 0.96 }}
                     onClick={() => downloadICS(activeEvent)}
-                    className="px-5 py-3 rounded-full bg-white border border-gold text-royal-maroon font-cormorant text-sm md:text-base font-semibold tracking-wider hover:bg-gold/10 transition-all flex items-center gap-2 cursor-pointer"
+                    className="px-5 py-3 rounded-full bg-white border border-gold text-royal-maroon font-cormorant text-sm md:text-base font-semibold tracking-wider hover:bg-gold/10 transition-colors flex items-center gap-2 cursor-pointer"
                   >
                     <CalendarPlus className="w-4 h-4 text-gold-dark" />
                     <span>{t.events.addToCalendar}</span>
-                  </button>
+                  </motion.button>
                 </div>
 
                 <button

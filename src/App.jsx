@@ -17,6 +17,8 @@ import Navigation from './components/Navigation';
 import CustomCursor from './components/CustomCursor';
 import PetalsOverlay from './components/PetalsOverlay';
 
+import ScrollProgress from './components/ScrollProgress';
+
 // Page Content Sections
 import Hero from './components/Hero';
 import GuestWelcome from './components/GuestWelcome';
@@ -104,6 +106,7 @@ export default function App() {
 
       {isEnvelopeOpened && (
         <>
+          <ScrollProgress />
           <LanguageSwitcher currentLang={currentLang} onSelectLang={setCurrentLang} />
           <Navigation t={t} />
         </>
