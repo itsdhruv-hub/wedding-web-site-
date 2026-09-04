@@ -22,6 +22,7 @@ export const weddingConfig = {
   musicTrack: {
     title: "Din Shagna Da (Phillauri)",
     artist: "Jasleen Royal / T-Series",
+    startTime: 11, // Start directly at main vocals "Din shagna da chadhya"
     audioUrls: [
       "/din-shagna-da.mp3",
       "https://raw.githubusercontent.com/gandhiritik/shivaliwedsromeshwedding-inviation-card-github.io/master/Din%20Shagna%20Da%20(Phillauri)%20128%20Kbps.mp3",

@@ -11,16 +11,24 @@ const MusicPlayer = forwardRef(({ autoStart = false }, ref) => {
 
   const audioSources = weddingConfig.musicTrack.audioUrls || [weddingConfig.musicTrack.audioUrl];
 
+  const startTime = weddingConfig.musicTrack.startTime || 0;
+
+  const playAudio = () => {
+    if (!audioRef.current) return;
+    if (startTime > 0 && audioRef.current.currentTime < startTime) {
+      audioRef.current.currentTime = startTime;
+    }
+    audioRef.current.play()
+      .then(() => setIsPlaying(true))
+      .catch((err) => {
+        console.log("Retrying audio with alternate source:", err);
+        handleAudioError();
+      });
+  };
+
   useImperativeHandle(ref, () => ({
     playMusic: () => {
-      if (audioRef.current) {
-        audioRef.current.play()
-          .then(() => setIsPlaying(true))
-          .catch((err) => {
-            console.log("Retrying audio with alternate source:", err);
-            handleAudioError();
-          });
-      }
+      playAudio();
     },
     pauseMusic: () => {
       if (audioRef.current) {
@@ -32,9 +40,7 @@ const MusicPlayer = forwardRef(({ autoStart = false }, ref) => {
 
   useEffect(() => {
     if (autoStart && audioRef.current) {
-      audioRef.current.play()
-        .then(() => setIsPlaying(true))
-        .catch(() => console.log('Autoplay deferred until user interaction'));
+      playAudio();
     }
   }, [autoStart]);
 
@@ -45,9 +51,7 @@ const MusicPlayer = forwardRef(({ autoStart = false }, ref) => {
       setTrackIndex(nextIdx);
       if (audioRef.current) {
         audioRef.current.src = audioSources[nextIdx];
-        audioRef.current.play()
-          .then(() => setIsPlaying(true))
-          .catch(e => console.log("Next source blocked", e));
+        playAudio();
       }
     }
   };
@@ -58,9 +62,7 @@ const MusicPlayer = forwardRef(({ autoStart = false }, ref) => {
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
-      audioRef.current.play()
-        .then(() => setIsPlaying(true))
-        .catch(handleAudioError);
+      playAudio();
     }
   };
 
