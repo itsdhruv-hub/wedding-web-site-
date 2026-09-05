@@ -3,6 +3,10 @@ import haldiImg from '../assets/haldi.jpg';
 import sangeetImg from '../assets/sangeet.jpg';
 import phereImg from '../assets/phere.jpg';
 import receptionImg from '../assets/reception.jpg';
+import brideImg from '../assets/bride.jpg';
+import groomImg from '../assets/groom.jpg';
+import couplePalaceImg from '../assets/couple_palace.jpg';
+import coupleFloralImg from '../assets/couple_floral.jpg';
 
 export const weddingConfig = {
   brideName: "Riya",
@@ -45,14 +49,14 @@ export const weddingConfig = {
   groomBio: "Tech Entrepreneur & Photographer. Passionate about mountain sunsets, classical music, and spontaneous road trips. Found his forever in Riya.",
 
   images: {
-    hero: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1920&q=85",
+    hero: couplePalaceImg,
     heroVideo: "https://assets.mixkit.co/videos/preview/mixkit-wedding-couple-walking-in-a-park-41566-large.mp4",
     envelopeBg: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1920&q=85",
-    bride: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
-    groom: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
-    coupleStoryPoster: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=80",
+    bride: brideImg,
+    groom: groomImg,
+    coupleStoryPoster: coupleFloralImg,
     venuePreview: phereImg,
-    finalSectionBg: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1920&q=85",
+    finalSectionBg: couplePalaceImg,
   },
 
   story: [
@@ -265,14 +269,14 @@ export const weddingConfig = {
   ],
 
   gallery: [
-    { url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1000&q=80", caption: "Eternal Love", span: "col-span-1 md:col-span-2 row-span-2" },
-    { url: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80", caption: "Royal Bride Riya", span: "col-span-1 row-span-1" },
-    { url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80", caption: "The Groom Aarav", span: "col-span-1 row-span-1" },
-    { url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80", caption: "Hand in Hand", span: "col-span-1 md:col-span-2 row-span-1" },
-    { url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80", caption: "Traditional Moments", span: "col-span-1 row-span-1" },
-    { url: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80", caption: "Laughter & Smiles", span: "col-span-1 row-span-1" },
-    { url: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1000&q=80", caption: "The Proposal Ring", span: "col-span-1 md:col-span-2 row-span-1" },
-    { url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80", caption: "Celebration Fireworks", span: "col-span-1 row-span-1" },
+    { url: couplePalaceImg, caption: "Eternal Love & Royal Heritage", span: "col-span-1 md:col-span-2 row-span-2" },
+    { url: brideImg, caption: "Royal Bride Riya", span: "col-span-1 row-span-1" },
+    { url: groomImg, caption: "The Groom Aarav", span: "col-span-1 row-span-1" },
+    { url: coupleFloralImg, caption: "Hand in Hand & Sacred Vows", span: "col-span-1 md:col-span-2 row-span-1" },
+    { url: phereImg, caption: "Sacred PHERA Rituals", span: "col-span-1 row-span-1" },
+    { url: sangeetImg, caption: "Laughter & Sangeet Beats", span: "col-span-1 row-span-1" },
+    { url: mehendiImg, caption: "Mehendi Festivities", span: "col-span-1 md:col-span-2 row-span-1" },
+    { url: haldiImg, caption: "Haldi Blessings", span: "col-span-1 row-span-1" },
   ],
 
   family: {
